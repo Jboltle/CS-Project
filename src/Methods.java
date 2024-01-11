@@ -2,10 +2,15 @@ import java.util.Scanner;
 class Methods {
     
     Scanner sc = new Scanner(System.in);
-    AsciiArt artGen = new AsciiArt();
     String getName = ("What is your name?");
-    String invalidStringMessage = "Please Enter a Valid Argument: ";
-    String invalidStrErorr = " ";
+    public String invalidStrErorr = ("");
+    public String invalidIntMessage() {
+        String intval = sc.next();
+        if (intval.contains("1") || intval.contains("2") || intval.contains("3")) {
+            return "You chose " + intval;
+        }
+        return "Please Enter a Valid Integer ";// Added a return statement to return a valid String value
+    }
     Thread time = new Thread(); 
     int timer;
     //made a time sleep try catch block as a function to stop having to do it over and over again
@@ -119,6 +124,7 @@ class Methods {
         System.out.print("Oh no! It's a dragon! \n"); //this is becuase the fucking thing wont work unlesss its in a try block 
         timesleep(1000);
         System.out.print("What do you do? \n 1. Run \n 2. Fight \n 3. Hide \n");
+        
         if (sc.next().equals("1") || sc.next().equals("3")) {
             System.out.println("The dragon destroyed your viliage");
         }
@@ -126,6 +132,7 @@ class Methods {
            
             int rand = (int)(Math.random()* 1000) + 100 ;
             int damage = rand;
+        
             if (rand % 2 == 0) {
                 damage = 0;
             }
@@ -134,9 +141,10 @@ class Methods {
                 
                 System.out.println(String.format("You got Lucky and have enough power", damage));
                 timesleep(1000);
-            }  System.out.println(String.format("You have damaged the dragon by %d damage %s" , damage, name));                     
-
+            }  System.out.println(String.format("You have damaged the dragon by %d damage %s" , damage, name));
+            
         }
+        else {System.out.println(invalidIntMessage());}
         
 
 

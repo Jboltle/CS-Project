@@ -4,15 +4,11 @@ public class Main {
         System.out.println(mthdClass.getName);
         String name = mthdClass.sc.nextLine();
         if (mthdClass.sc.nextLine().equals(mthdClass.invalidStrErorr)) {
-            System.out.println(mthdClass.invalidStringMessage);
             mthdClass.sc.close();
         }
         else  {
             mthdClass.helloMessageString(name);
             mthdClass.timesleep(1000);
-            if (mthdClass.sc.next().equals(mthdClass.invalidStrErorr)){
-                System.out.println(mthdClass.invalidStringMessage);
-            }
             mthdClass.dragonMessageString(mthdClass.dragon, name);        
             
         }
