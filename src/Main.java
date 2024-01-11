@@ -9,8 +9,9 @@ public class Main {
         }
         else {
             mthdClass.helloMessageString(name);
-            System.out.println(mthdClass.boom);
-        
+            mthdClass.timesleep(1000);
+            
+            mthdClass.dragonMessageString(mthdClass.dragon, name);        
             
         }
         

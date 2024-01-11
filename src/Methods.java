@@ -1,51 +1,56 @@
 import java.util.Scanner;
 class Methods {
+    
     Scanner sc = new Scanner(System.in);
     AsciiArt artGen = new AsciiArt();
     String getName = ("What is your name?");
     String invalidStringMessage = "Please Enter a Valid Argument: ";
     String invalidStrErorr = " ";
     Thread time = new Thread(); 
-    int timer = 1;
+    int timer;
+    //made a time sleep try catch block as a function to stop having to do it over and over again
+    public void timesleep(int timer) {
+        try {
+            Thread.sleep(timer);
+        } catch (InterruptedException interruptError) {
+            interruptError.printStackTrace();
+        }
+    }
     public void helloMessageString(String name) {
         for (int i = 0; i < 20; i++){
            
-            try {
-                time.sleep((i * timer));
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+           timesleep(5);
             System.out.print("|" + '\n');   
         }
     System.out.print("Hello " + name + '\n' + "Wait, what's that? \n ");
 
     for (int i = 0; i < 3; i++) {
         System.out.print(".");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException interruptError) {
-            interruptError.printStackTrace();
-        }
-    }}
-
-    public void dragonMessageString(String name,String dragon) {
-        System.out.print(dragon);
-        System.out.print("Oh no! It's a dragon! \n"); //this is becuase the fucking thing wont work unlesss its in a try block 
-        
-        try {Thread.sleep(5000);} catch (InterruptedException interruptError) {interruptError.printStackTrace();}
-        System.out.print("What do you do? \n 1. Run \n 2. Fight \n 3. Hide \n");
-        sc.next();
-    } 
+        timesleep(2000);
+    }
     
+    String boom = "\n @@@@@@@@@@@   @@@@@@@@@@    @@@@@@@@@@   @@@@@   @@@@@\n" +
+                  "@@@@@@@@@@@   @@@@@@@@@@    @@@@@@@@@@   @@@@@   @@@@@\n" +
+                  "@@@     @@@   @@@    @@@    @@@    @@@   @@@@@   @@@@@\n" +
+                  "@@@     @@@  @@@      @@@  @@@      @@@  @@@@@   @@@@@\n" +
+                  "@@@@@@@@@@   @@@      @@@  @@@      @@@  @@@ @@ @@ @@@\n" +
+                  "@@@@@@@@@    @@@      @@@  @@@      @@@  @@@ @@ @@ @@@\n" +
+                  "@@@@@@@@@@   @@@      @@@  @@@      @@@  @@@ @@ @@ @@@\n" +
+                  "@@@     @@@  @@@      @@@  @@@      @@@  @@@ @@ @@ @@@\n" +
+                  "@@@     @@@   @@@    @@@    @@@    @@@   @@@  @@@  @@@\n" +
+                  "@@@@@@@@@@@   @@@@@@@@@@    @@@@@@@@@@   @@@  @@@  @@@\n" +
+                  "@@@@@@@@@@     @@@@@@@@      @@@@@@@@    @@@  @@@  @@@\n" +
+                  "@@@@@@@@@        @@@@          @@@@      @@@   @   @@@\n" +
+                  "@@@@@@@@@        @@@@          @@@@      @@@       @@@";
 
-
-
-
-
-
-
-
-
+    System.out.print(boom);
+    timesleep(1000);
+     for (int i = 0; i < 30; i++){
+           
+           timesleep(5);
+            System.out.print("|" + '\n');   
+        }
+}
 
 
 
@@ -107,21 +112,44 @@ class Methods {
             "                                                                  @#++#@##@                         \r\n";
 
 
-    String boom = "@@@@@@@@@@@   @@@@@@@@@@    @@@@@@@@@@   @@@@@   @@@@@\n" +
-                  "@@@@@@@@@@@   @@@@@@@@@@    @@@@@@@@@@   @@@@@   @@@@@\n" +
-                  "@@@     @@@   @@@    @@@    @@@    @@@   @@@@@   @@@@@\n" +
-                  "@@@     @@@  @@@      @@@  @@@      @@@  @@@@@   @@@@@\n" +
-                  "@@@@@@@@@@   @@@      @@@  @@@      @@@  @@@ @@ @@ @@@\n" +
-                  "@@@@@@@@@    @@@      @@@  @@@      @@@  @@@ @@ @@ @@@\n" +
-                  "@@@@@@@@@@   @@@      @@@  @@@      @@@  @@@ @@ @@ @@@\n" +
-                  "@@@     @@@  @@@      @@@  @@@      @@@  @@@ @@ @@ @@@\n" +
-                  "@@@     @@@   @@@    @@@    @@@    @@@   @@@  @@@  @@@\n" +
-                  "@@@@@@@@@@@   @@@@@@@@@@    @@@@@@@@@@   @@@  @@@  @@@\n" +
-                  "@@@@@@@@@@     @@@@@@@@      @@@@@@@@    @@@  @@@  @@@\n" +
-                  "@@@@@@@@@        @@@@          @@@@      @@@   @   @@@\n" +
-                  "@@@@@@@@@        @@@@          @@@@      @@@       @@@";
+    
         
+        public void dragonMessageString(String dragon, String name) {
+        System.out.print(dragon);
+        System.out.print("Oh no! It's a dragon! \n"); //this is becuase the fucking thing wont work unlesss its in a try block 
+        timesleep(1000);
+        System.out.print("What do you do? \n 1. Run \n 2. Fight \n 3. Hide \n");
+        if (sc.next().equals("1") || sc.next().equals("3")) {
+            System.out.println("The dragon destroyed your viliage");
+
+        }
+        else if (sc.next().contentEquals("2")){
+           
+            int rand = (int)(Math.random()* 1000) + 100 ;
+            int damage = rand;
+            if (rand % 2 == 0) {
+                damage = 0;
+            
+            }
+                        
+            else {System.out.println(String.format("You have damaged the dragon by %d damage %s" , damage, name));
+        }
         
+        }
+    } 
+    
+
+
+
+
+
+
+
+
+
+
+
+
           
 
 
