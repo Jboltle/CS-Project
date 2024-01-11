@@ -4,7 +4,7 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
- 
+
 /**
  * ASCII Art Generator in Java. 
  * Prints a given text as an ASCII text art on the console. 
@@ -20,7 +20,10 @@ public class AsciiArt {
     public static final int ART_SIZE_HUGE = 32;
  
     private static final String DEFAULT_ART_SYMBOL = "*";
- 
+    public static void main (String[] args) throws Exception {
+        AsciiArt artGen = new AsciiArt();
+        artGen.printTextArt("BOOM", AsciiArt.ART_SIZE_MEDIUM, AsciiArt.ASCIIArtFont.ART_FONT_SANS_SERIF, "@");
+    }
     public enum ASCIIArtFont {
         ART_FONT_DIALOG("Dialog"), ART_FONT_DIALOG_INPUT("DialogInput"), 
         ART_FONT_MONO("Monospaced"),ART_FONT_SERIF("Serif"), ART_FONT_SANS_SERIF("SansSerif");
@@ -36,17 +39,11 @@ public class AsciiArt {
         }
     }
  
-    public static void main(String[] args) throws Exception {
-        AsciiArt artGen = new AsciiArt();
-         
-        System.out.println();
-        artGen.printTextArt("Hello", AsciiArt.ART_SIZE_MEDIUM);
-        System.out.println();
-         
-        System.out.println();
-        artGen.printTextArt("Love is life!", AsciiArt.ART_SIZE_SMALL, ASCIIArtFont.ART_FONT_MONO,"@");
-        System.out.println();
-         
+    public class YourClass {
+        public static void main(String[] args) throws Exception {
+            AsciiArt artGen = new AsciiArt();
+            artGen.printTextArt("BOOM", AsciiArt.ART_SIZE_MEDIUM, AsciiArt.ASCIIArtFont.ART_FONT_SANS_SERIF, "@");
+        }
     }
  
     /**
@@ -60,8 +57,8 @@ public class AsciiArt {
      */
     public void printTextArt(String artText, int textHeight, ASCIIArtFont fontType, String artSymbol) throws Exception {
         String fontName = fontType.getValue();
+        
         int imageWidth = findImageWidth(textHeight, artText, fontName);
- 
         BufferedImage image = new BufferedImage(imageWidth, textHeight, BufferedImage.TYPE_INT_RGB);
         Graphics g = image.getGraphics();
         Font font = new Font(fontName, Font.BOLD, textHeight);
@@ -90,7 +87,7 @@ public class AsciiArt {
     public void printTextArt(String artText, int textHeight) throws Exception {
         printTextArt(artText, textHeight, ASCIIArtFont.ART_FONT_DIALOG, DEFAULT_ART_SYMBOL);
     }
- 
+    
     /**
      * Using the Current font and current art text find the width of the full image
      * @param textHeight

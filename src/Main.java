@@ -1,8 +1,6 @@
-
 public class Main {
     public static void main(String[] args) {
         Methods mthdClass = new Methods();
-        AsciiArt asciiArt = new AsciiArt();
         System.out.println(mthdClass.getName);
         String name = mthdClass.sc.nextLine();
         if (mthdClass.sc.nextLine().equals(mthdClass.invalidStrErorr)) {
@@ -11,7 +9,8 @@ public class Main {
         }
         else {
             mthdClass.helloMessageString(name);
-            asciiArt.printTextArt("Boom", asciiArt.asciiart.ART_SIZE_MEDIUM); 
+            System.out.println(mthdClass.boom);
+            
         }
         
     }
