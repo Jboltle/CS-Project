@@ -4,13 +4,13 @@ class Methods {
     Scanner sc = new Scanner(System.in);
     String getName = ("What is your name?");
     public String invalidStrErorr = "";
-    public String invalidIntMessage() {
+    /*public String invalidIntMessage() {
         String intval = sc.next();
         if (intval.contains("1") || intval.contains("2") || intval.contains("3")) {
             return "You chose " + intval;
         }
         return "Please Enter a Valid Integer ";// Added a return statement to return a valid String value
-    }
+    }*/
     Thread time = new Thread(); 
     int timer;
     //made a time sleep try catch block as a function to stop having to do it over and over again
@@ -27,7 +27,9 @@ class Methods {
            timesleep(5);
             System.out.print("|" + '\n');   
         }
-    System.out.print("Hello " + name + '\n' + "Wait, what's that? \n ");
+    System.out.print("Hello " + name + '\n' );
+    timesleep(1000);
+     System.out.println("Wait, what's that? \n ");
 
     for (int i = 0; i < 3; i++) {
         System.out.print(".");
