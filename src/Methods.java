@@ -3,7 +3,7 @@ class Methods {
     
     Scanner sc = new Scanner(System.in);
     String getName = ("What is your name?");
-    public String invalidStrErorr = ("");
+    public String invalidStrErorr = "";
     public String invalidIntMessage() {
         String intval = sc.next();
         if (intval.contains("1") || intval.contains("2") || intval.contains("3")) {
