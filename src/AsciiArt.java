@@ -39,12 +39,7 @@ public class AsciiArt {
         }
     }
  
-    public class YourClass {
-        public static void main(String[] args) throws Exception {
-            AsciiArt artGen = new AsciiArt();
-            artGen.printTextArt("BOOM", AsciiArt.ART_SIZE_MEDIUM, AsciiArt.ASCIIArtFont.ART_FONT_SANS_SERIF, "@");
-        }
-    }
+  
  
     /**
      * Prints ASCII art for the specified text. For size, you can use predefined sizes or a custom size.

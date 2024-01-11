@@ -2,8 +2,14 @@ import java.util.Scanner;
 class Methods {
     
     Scanner sc = new Scanner(System.in);
-    String getName = ("What is your name?");
-    public String invalidStrErorr = "";
+    public String getName(){ return "What is your name?";}
+    public String invalidStrErorr(String nameVal) {
+     namVal = "Please use a valid name";
+     System.out.println(namVal);
+    
+    }
+
+        
     /*public String invalidIntMessage() {
         String intval = sc.next();
         if (intval.contains("1") || intval.contains("2") || intval.contains("3")) {
@@ -36,7 +42,7 @@ class Methods {
         timesleep(2000);
     }
     
-    String boom = "\n @@@@@@@@@@@   @@@@@@@@@@    @@@@@@@@@@   @@@@@   @@@@@\n" +
+    String boom = "@@@@@@@@@@@   @@@@@@@@@@    @@@@@@@@@@   @@@@@   @@@@@\n" +
                   "@@@@@@@@@@@   @@@@@@@@@@    @@@@@@@@@@   @@@@@   @@@@@\n" +
                   "@@@     @@@   @@@    @@@    @@@    @@@   @@@@@   @@@@@\n" +
                   "@@@     @@@  @@@      @@@  @@@      @@@  @@@@@   @@@@@\n" +
@@ -130,7 +136,7 @@ class Methods {
         if (sc.next().equals("1") || sc.next().equals("3")) {
             System.out.println("The dragon destroyed your viliage");
         }
-        else if (sc.next().equals("2")){
+        else if (sc.nextLine().equals("2")){
            
             int rand = (int)(Math.random()* 1000) + 100 ;
             int damage = rand;
@@ -146,7 +152,9 @@ class Methods {
             }  System.out.println(String.format("You have damaged the dragon by %d damage %s" , damage, name));
             
         }
-        else {System.out.println(invalidIntMessage());}
+        else {
+            return;
+            }
         
 
 
