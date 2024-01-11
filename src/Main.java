@@ -10,6 +10,7 @@ public class Main {
         else {
             mthdClass.helloMessageString(name);
             System.out.println(mthdClass.boom);
+        
             
         }
         
