@@ -7,10 +7,12 @@ public class Main {
             System.out.println(mthdClass.invalidStringMessage);
             mthdClass.sc.close();
         }
-        else {
+        else  {
             mthdClass.helloMessageString(name);
             mthdClass.timesleep(1000);
-            
+            if (mthdClass.sc.next().equals(mthdClass.invalidStrErorr)){
+                System.out.println(mthdClass.invalidStringMessage);
+            }
             mthdClass.dragonMessageString(mthdClass.dragon, name);        
             
         }

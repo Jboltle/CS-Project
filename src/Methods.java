@@ -121,19 +121,25 @@ class Methods {
         System.out.print("What do you do? \n 1. Run \n 2. Fight \n 3. Hide \n");
         if (sc.next().equals("1") || sc.next().equals("3")) {
             System.out.println("The dragon destroyed your viliage");
-
         }
-        else if (sc.next().contentEquals("2")){
+        else if (sc.next().equals("2")){
            
             int rand = (int)(Math.random()* 1000) + 100 ;
             int damage = rand;
             if (rand % 2 == 0) {
                 damage = 0;
-            
             }
                         
-            else {System.out.println(String.format("You have damaged the dragon by %d damage %s" , damage, name));
+            if (damage >= 500){
+                
+                System.out.println(String.format("You got Lucky and have enough power", damage));
+                timesleep(1000);
+            }  System.out.println(String.format("You have damaged the dragon by %d damage %s" , damage, name));                     
+
         }
+        
+
+
         
         }
     } 
@@ -153,4 +159,4 @@ class Methods {
           
 
 
-    }
+    
