@@ -131,6 +131,7 @@ class Methods {
         System.out.print("Oh no! It's a dragon! \n"); //this is becuase the fucking thing wont work unlesss its in a try block 
         timesleep(1000);
         System.out.print("What do you do? \n 1. Run \n 2. Fight \n 3. Hide \n");
+<<<<<<< HEAD
         
             try {
                 if (sc.nextLine().equals("2")){
@@ -167,6 +168,37 @@ class Methods {
             } catch (ArithmeticException e) {
              e.printStackTrace();
              System.out.println(invalidIntMessage());
+=======
+        if (sc.nextLine().equals("2")){
+            
+            int rand = (int)(Math.random()* 1000) + 100;
+            int damage = rand;
+        
+            if (damage % 2 == 0) {
+                damage = 0;
+            }
+                        
+            if (damage >= 500){
+                
+                System.out.println(String.format("You got Lucky and have enough power: %d damage ", damage));
+                timesleep(1000);
+                System.out.println(String.format("You have defeated the dragon %s dealing %d damage", name, damage));
+                if (damage <= 500) { 
+                    System.out.println(String.format("You have damaged the dragon by %d damage %s" , damage, name));
+                }
+
+            }  
+           
+            
+        }
+        if (sc.next().equals("1") || sc.next().equals("3")) {
+            System.out.println("The dragon destroyed your viliage");
+        }
+            
+        else {
+            System.out.println(invalidIntMessage());
+        }
+>>>>>>> refs/remotes/origin/main
         }
     
     }
