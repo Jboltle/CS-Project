@@ -3,34 +3,33 @@ class Methods {
     
     Scanner sc = new Scanner(System.in);
     public String getName(){ return "What is your name?";}
-    public String invalidStrErorr(String nameVal) {
-     namVal = "Please use a valid name";
-     System.out.println(namVal);
-    
-    }
+    String invalidStrErorr = "";
+
 
         
-    /*public String invalidIntMessage() {
-        String intval = sc.next();
+    public String invalidIntMessage() {
+        String intval = sc.nextLine();
         if (intval.contains("1") || intval.contains("2") || intval.contains("3")) {
-            return "You chose " + intval;
+            return "";
         }
-        return "Please Enter a Valid Integer ";// Added a return statement to return a valid String value
-    }*/
-    Thread time = new Thread(); 
-    int timer;
-    //made a time sleep try catch block as a function to stop having to do it over and over again
-    public void timesleep(int timer) {
+        else {
+        return "Please Enter a Valid Integer ";
+        }
+    }
+
+
+    // Fixed the recursive call in the timesleep method
+    public void timesleep(int timesleep) {
         try {
-            Thread.sleep(timer);
-        } catch (InterruptedException interruptError) {
-            interruptError.printStackTrace();
+            Thread.sleep(timesleep);
+        } catch (Exception e) {
+            System.out.println("Error trying to sleep");
         }
     }
     public void helloMessageString(String name) {
         for (int i = 0; i < 20; i++){
            
-           timesleep(5);
+           timesleep(10);
             System.out.print("|" + '\n');   
         }
     System.out.print("Hello " + name + '\n' );
@@ -39,7 +38,7 @@ class Methods {
 
     for (int i = 0; i < 3; i++) {
         System.out.print(".");
-        timesleep(2000);
+        timesleep(1000);
     }
     
     String boom = "@@@@@@@@@@@   @@@@@@@@@@    @@@@@@@@@@   @@@@@   @@@@@\n" +
@@ -133,34 +132,46 @@ class Methods {
         timesleep(1000);
         System.out.print("What do you do? \n 1. Run \n 2. Fight \n 3. Hide \n");
         
-        if (sc.next().equals("1") || sc.next().equals("3")) {
-            System.out.println("The dragon destroyed your viliage");
-        }
-        else if (sc.nextLine().equals("2")){
-           
-            int rand = (int)(Math.random()* 1000) + 100 ;
-            int damage = rand;
-        
-            if (rand % 2 == 0) {
-                damage = 0;
-            }
-                        
-            if (damage >= 500){
+            try {
+                if (sc.nextLine().equals("2")){
                 
-                System.out.println(String.format("You got Lucky and have enough power", damage));
-                timesleep(1000);
-            }  System.out.println(String.format("You have damaged the dragon by %d damage %s" , damage, name));
+                int rand = (int)(Math.random()* 1000) + 100;
+                int damage = rand;
             
-        }
-        else {
-            return;
+                if (damage % 2 == 0) {
+                    damage = 0;
+                }
+                            
+                if (damage >= 500){
+                    
+                    System.out.println(String.format("You got Lucky and have enough power: %d damage ", damage));
+                    timesleep(1000);
+                    System.out.println(String.format("You have defeated the dragon %s dealing %d damage", name, damage));
+                    if (damage <= 500) { 
+                        System.out.println(String.format("You have damaged the dragon by %d damage %s" , damage, name));
+                    }
+
+                }  
+            
+                
             }
-        
+            } catch (Exception e) { e.printStackTrace();        }
+            
+            try {
 
-
-        
+                if (sc.next().equals("1") || sc.next().equals("3")) {
+                System.out.println("The dragon destroyed your viliage");
+            }
+                
+                
+            } catch (ArithmeticException e) {
+             e.printStackTrace();
+             System.out.println(invalidIntMessage());
         }
-    } 
+    
+    }
+}
+
     
 
 
