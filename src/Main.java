@@ -4,8 +4,8 @@ public class Main {
         System.out.println(mthdClass.getName());
         String name = mthdClass.sc.nextLine();
         try {
-            
-            if (mthdClass.sc.nextLine().equals(mthdClass.invalidStrErorr)) {
+                
+            if (name.equals(mthdClass.invalidStrErorr)) {
                 mthdClass.sc.close();
             }
         } catch (Exception e) {
