@@ -2,23 +2,13 @@ import java.util.Scanner;
 class Methods {
     
     Scanner sc = new Scanner(System.in);
-<<<<<<< HEAD
-    String getName = ("What is your name?");
-    public String invalidStrErorr = "";
-    public String invalidIntMessage() {
-        String intval = sc.nextLine();
-=======
     public String getName(){ return "What is your name?";}
-    public String invalidStrErorr(String nameVal) {
-     namVal = "Please use a valid name";
-     System.out.println(namVal);
-    
-    }
+    String invalidStrErorr = "";
+
 
         
-    /*public String invalidIntMessage() {
-        String intval = sc.next();
->>>>>>> 4cc4aed573622112adf8bbb3160003a8be7e03bd
+    public String invalidIntMessage() {
+        String intval = sc.nextLine();
         if (intval.contains("1") || intval.contains("2") || intval.contains("3")) {
             return "";
         }
@@ -48,7 +38,7 @@ class Methods {
 
     for (int i = 0; i < 3; i++) {
         System.out.print(".");
-        timesleep(2000);
+        timesleep(1000);
     }
     
     String boom = "@@@@@@@@@@@   @@@@@@@@@@    @@@@@@@@@@   @@@@@   @@@@@\n" +
@@ -141,19 +131,9 @@ class Methods {
         System.out.print("Oh no! It's a dragon! \n"); //this is becuase the fucking thing wont work unlesss its in a try block 
         timesleep(1000);
         System.out.print("What do you do? \n 1. Run \n 2. Fight \n 3. Hide \n");
-<<<<<<< HEAD
         if (sc.nextLine().equals("2")){
             
             int rand = (int)(Math.random()* 1000) + 100;
-=======
-        
-        if (sc.next().equals("1") || sc.next().equals("3")) {
-            System.out.println("The dragon destroyed your viliage");
-        }
-        else if (sc.nextLine().equals("2")){
-           
-            int rand = (int)(Math.random()* 1000) + 100 ;
->>>>>>> 4cc4aed573622112adf8bbb3160003a8be7e03bd
             int damage = rand;
         
             if (damage % 2 == 0) {
@@ -173,7 +153,6 @@ class Methods {
            
             
         }
-<<<<<<< HEAD
         if (sc.next().equals("1") || sc.next().equals("3")) {
             System.out.println("The dragon destroyed your viliage");
         }
@@ -181,15 +160,6 @@ class Methods {
         else {
             System.out.println(invalidIntMessage());
         }
-=======
-        else {
-            return;
-            }
-        
-
-
-        
->>>>>>> 4cc4aed573622112adf8bbb3160003a8be7e03bd
         }
     } 
     
